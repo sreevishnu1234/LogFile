@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: floralwhite;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: black;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="number"] {
+      width: 80px;
+    }
+
+    input[type="file"] {
+      margin-left: 10px;
+    }
+
+    button {
+    background-color: royalblue;
+  	border: 2px;
+  	color: white;
+  	padding: 8px;
+  	font-size: 16px;
+  	margin: 4x 3px;
+  	border-radius: 25%;
+
+    }
+
+    button:hover {
+      background-color: royalblue;
+    }
+
+    h2 {
+      color: orange;
+      margin-top: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 2px solid floralwhite;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: black;
+      color: white
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .summary {
+      background-color: tan;
+      padding: 10px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1><center><b>Log Files Analyzer(.XML and .JSON)</b></center><br></h1>
+  <label for="numDays"><center>Specify The Number of Days</label>
+  <input type="number" id="numDays" min="1" />
+  <input type="file" id="logFiles" accept=".xml,.json" multiple /></center><br>
+  <center><button onclick="analyzeLogFiles()"><b>Analyze</b></button>
+  <button onclick="resetLogFiles()" ><b>Reset</b></button></center>
+  <br><center>
+  Use "Reset" button to clear log files and table from GUI.
+  </center><br>
+  <h2>Creation of Objects</h2>
+  <table id="creationTable">
+    <tr>
+      <th>Name of File</th>
+      <th>Name of Object</th>
+      <th>Owner Name</th>
+      <th>Date of creation</th>
+    </tr>
+  </table>
+  
+  <h2>Deletion of Objects</h2>
+  <table id="deletionTable">
+    <tr>
+      <th>Name of File</th>
+      <th>Name of Object</th>
+      <th>Owner Name</th>
+      <th>Date of creation</th>
+      <th>Date of deletion</th>
+    </tr>
+  </table>
+  
+  <h2>Modification of Objects</h2>
+  <table id="modificationTable">
+    <tr>
+      <th>Name of File</th>
+      <th>Name of Object</th>
+      <th>Owner Name</th>
+      <th>Last date of modification</th>
+    </tr>
+  </table>
+  <h2>Summary</h2>
+  <div class="summary">
+    <p>Total Created Objects in given number of days: <span id="createdCount">0</span></p>
+    <p>Total Deleted Objects in given number of days: <span id="deletedCount">0</span></p>
+    <p>Total Modified Objects in given number of days: <span id="modifiedCount">0</span></p>
+  </div>
+  <br><br><center><button onclick=""><b>Save</b></button>
+  <script src="js+2.js"></script>
+
+</body>
+</html>
